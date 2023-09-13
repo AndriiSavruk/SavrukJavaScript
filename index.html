@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test task</title>
+</head>
+
+<body>
+    <h3><b>Task</b></h3>
+    <p><b>Make up an algorithm</b> <br>
+    <ul>
+        <li>If the entered number is greater than 7, then print “Hello” <br></li>
+        <li>If the entered name matches “John”, then output “Hello, John”, if not, then output "There is no such name"
+            <br>
+        </li>
+        <li>There is a numeric array at the input, it is necessary to output array elements that are multiples of 3 <br>
+        </li>
+    </ul>
+    </p>
+    <button onclick="numFunction()">Enter number</button>
+    <p id="num"></p>
+    <button onclick="nameFunction()">Enter name</button>
+    <p id="name"></p>
+    <button onclick="arrFunction()">Enter array</button>
+    <p id="arr"></p>
+    <script>
+        function numFunction() {
+            let num = prompt("Please enter a number");
+            if (num > 7) { document.getElementById("num").innerHTML = 'Hello'; }
+        };
+        function nameFunction() {
+            let text;
+            let name = prompt("Please enter a name");
+            if (name === 'John') { text = 'Hello, John'; }
+            else { text = 'There is no such name'; }
+            document.getElementById("name").innerHTML = text;
+        }
+        function arrFunction() {
+            let inputNum = prompt("Please enter an array with numbers separated by commas");
+
+            let inputArr = inputNum.split(",");
+
+            let outputArr = [];
+            for (let index = 0; index < inputArr.length; index++) {
+                if (inputArr[index] % 3 === 0) { outputArr.push(inputArr[index]) }
+            }
+            if (outputArr.length > 0) {
+                document.getElementById("arr").innerHTML = "Array elements that are multiples of 3: " + outputArr;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
