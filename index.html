@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test task</title>
+    <style>
+        .arrow::marker {
+            content: "⇾";
+        }
+    </style>
 </head>
 
 <body>
     <h3><b>Task</b></h3>
-    <p><b>Make up an algorithm</b> <br>
+    <p><b>1. Make up an algorithm</b> <br>
     <ul>
         <li>If the entered number is greater than 7, then print “Hello” <br></li>
         <li>If the entered name matches “John”, then output “Hello, John”, if not, then output "There is no such name"
@@ -24,7 +29,28 @@
     <button onclick="nameFunction()">Enter name</button>
     <p id="name"></p>
     <button onclick="arrFunction()">Enter array</button>
-    <p id="arr"></p>
+    <p id="arr"></p> <br>
+    <p><b>2. Answer the questions</b></p>
+    <p>Given bracket sequence: [((())()(())]] <br>
+    <ul style="list-style-type: none">
+        <li class="arrow">Can this sequence be considered correct?</li>
+        <li class="arrow">If the answer to the previous question is “no”, then what needs to be changed in it to make it
+            correct?
+        </li>
+    </ul>
+    </p> <br>
+    <p><b>My answer</b></p>
+    <p>First of all, this sequence is not correct</p> 
+    <p>In order to make this sequence correct we need: <br>
+    <ul style="list-style-type: circle">
+        <li>to add one bracket '[' to the left (if we need a two-dimensional array) or remove one bracket ']' from the
+            right (if we need a one-dimensional array): [[((())()(())]] or [((())()(())]</li>
+        <li>to divide array elements with commas: [[((()),(),(())]] or [((()),(),(())]</li>
+        <li>to remove one bracket '(' from the left side of the first array element or add one bracket ')' to the right
+            side of that element: [(()),(),(())] or [((())),(),(())] or [[(()),(),(())]] or [[((())),(),(())]]</li>
+        <li>All these four examples are correct</li>
+    </ul>
+    </p>
     <script>
         function numFunction() {
             let num = prompt("Please enter a number");
